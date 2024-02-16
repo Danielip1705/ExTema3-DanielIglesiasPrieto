@@ -4,19 +4,15 @@ package fecha;
  * Clase fecha donde se realizara funciones
  */
 public class Fecha {
-<<<<<<< HEAD
 	/***
 	 * Numero entero privado
 	 */
 	private int d; 
-=======
 	public static final int DIEZ = 10;
 	private int dia; //d�a
 	private int mes; //mes
 	private int año; //a�o
 
->>>>>>> PMD-Refactor
-	
 	/***
 	 * Numero entero privado
 	 */
@@ -80,29 +76,29 @@ public class Fecha {
 		return diaCorrecto && mesCorrecto && anioCorrecto;
 	}
 
-<<<<<<< HEAD
+
 	/***
 	 * Funcion que realiza una operacion si año es bisiesto
 	 * 
 	 * @return True o false (Boolean)
 	 */
-=======
->>>>>>> PMD-Refactor
+
 	private boolean esBisiesto() {
 		return año % 4 == 0 && año % 100 != 0 || año % 400 == 0;
 	}
 
-<<<<<<< HEAD
+
 	/***
 	 * Funcion que aumenta el mes y el año si el dia o el mes es distinto que el
 	 * resultado fecha correcta
 	 */
 	public void diaSiguiente() {
 		d++;
-=======
+	}
+
 	public void nextDay() {
 		dia++;
->>>>>>> PMD-Refactor
+
 		if (!fechaCorrecta()) {
 			dia = 1;
 			mes++;
@@ -113,13 +109,11 @@ public class Fecha {
 		}
 	}
 
-<<<<<<< HEAD
 	/***
 	 * Funcion que imprime la fecha
 	 */
-=======
+
 	// M�todo toString
->>>>>>> PMD-Refactor
 	public String toString() {
 		String fecha="";
 		if (dia < DIEZ && mes < DIEZ) {
