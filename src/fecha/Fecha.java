@@ -1,24 +1,50 @@
 package fecha;
 
+/***
+ * Clase fecha donde se realizara funciones
+ */
 public class Fecha {
-	private int d; //dÌa
-	private int m; //mes
-	private int a; //aÒo
-
+	/***
+	 * Numero entero privado
+	 */
+	private int d; 
 	
+	/***
+	 * Numero entero privado
+	 */
+	private int m; 
+	
+	/***
+	 * Numero entero privado
+	 */
+	private int a; 
+
+	/***
+	 * Constructor sin parametros
+	 */
 	public Fecha() {
 
 	}
 
-	
+	/***
+	 * Constructor con parametros
+	 * 
+	 * @param dia  Numero entero que contiene un dia
+	 * @param mes  Numero entero que contiene un mes
+	 * @param anio Numero entero que contiene un a√±o
+	 */
 	public Fecha(int dia, int mes, int anio) {
 		this.d = dia;
 		this.m = mes;
 		this.a = anio;
 	}
 
-	
-	
+	/***
+	 * Funcion que corrige las variables si los numeros son mayores que 30,21,29 o
+	 * si son bisiestos
+	 * 
+	 * @return Numero entero con la variable corregida
+	 */
 	public boolean fechaCorrecta() {
 		boolean diaCorrecto, mesCorrecto, anioCorrecto;
 		anioCorrecto = a > 0;
@@ -43,13 +69,20 @@ public class Fecha {
 		return diaCorrecto && mesCorrecto && anioCorrecto;
 	}
 
-	// MÈtodo esBisiesto. Solo lo usa fechaCorrecta, por eso es privado
+	/***
+	 * Funcion que realiza una operacion si a√±o es bisiesto
+	 * 
+	 * @return True o false (Boolean)
+	 */
 	private boolean esBisiesto() {
 		boolean esBisiesto = (a % 4 == 0 && a % 100 != 0 || a % 400 == 0);
 		return esBisiesto;
 	}
 
-	// MÈtodo diaSiguiente
+	/***
+	 * Funcion que aumenta el mes y el a√±o si el dia o el mes es distinto que el
+	 * resultado fecha correcta
+	 */
 	public void diaSiguiente() {
 		d++;
 		if (!fechaCorrecta()) {
@@ -62,7 +95,9 @@ public class Fecha {
 		}
 	}
 
-	// MÈtodo toString
+	/***
+	 * Funcion que imprime la fecha
+	 */
 	public String toString() {
 		if (d < 10 && m < 10) {
 			return "0" + d + "-0" + m + "-" + a;
